@@ -13,6 +13,17 @@ This repo contains the references (code + ABI) for two ERC721 tokens deployed on
 
 To get started using these tokens, I suggest you use the truffle generated ABI and MyCrypto or to visit Etherscan in order to claim/buy a token for each.
 
+## Frontend UX (React)
+
+- App React (Vite) dans `frontend/` avec connexion Metamask (Sepolia uniquement) et routes :
+  - `/chain-info` (infos réseau + wallet, redirection si mauvaise chaîne)
+  - `/fakeBayc` (nom, supply, bouton claim)
+  - `/fakeBayc/:tokenId` (affichage métadonnées + erreurs propres si token absent)
+  - `/fakeNefturians` (prix minimum, achat avec buffer)
+  - `/fakeNefturians/:userAddress` (liste des tokens détenus avec métadonnées)
+  - `/fakeMeebits` (claim via signatures fournies dans `frontend/public/claimer-signatures.json`)
+- Lancer l'app : `cd frontend && npm install && npm run dev` (ou `npm run build` pour un build statique).
+- Les ABI sont importées depuis `build/contracts` et les signatures du claimer sont pré-copiées dans `frontend/public/`.
 ## Tasks list
 
 ### Creating a js app and connecting to Ethereum
