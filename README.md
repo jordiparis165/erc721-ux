@@ -2,28 +2,35 @@
 
 ## Intro
 
-Your job is to build a simple UX to visualize and manipulate ERC721 Tokens.
+Simple UX to visualise/manipulate the provided ERC721s on Sepolia.
 
-This repo contains the references (code + ABI) for two ERC721 tokens deployed on the Sepolia testnet, which you'll need to use.
-
-- [Fake BAYC](contracts/FakeBAYC.sol) ( 0x1dA89342716B14602664626CD3482b47D5C2005E on Sepolia ) (get the [ABI](build/contracts/FakeBAYC.json))
-- [Fake Nefturians](contracts/FakeNefturians.sol) (0x9bAADf70BD9369F54901CF3Ee1b3c63b60F4F0ED on Sepolia ) (get the [ABI](build/contracts/FakeNefturians.json))
-- [Fake Meebits](contracts/FakeMeebits.sol) (0xD1d148Be044AEB4948B48A03BeA2874871a26003 on Sepolia ) (get the [ABI](build/contracts/FakeMeebits.json))
-- [Fake Meebits Claimer](contracts/FakeMeebitsClaimer.sol) (0x5341e225Ab4D29B838a813E380c28b0eFD6FBa55 on Sepolia ) (get the [ABI](build/contracts/FakeMeebitsClaimer.json))
-
-To get started using these tokens, I suggest you use the truffle generated ABI and MyCrypto or to visit Etherscan in order to claim/buy a token for each.
+- Fake BAYC (0x1dA89342716B14602664626CD3482b47D5C2005E) — ABI: `build/contracts/FakeBAYC.json`
+- Fake Nefturians (0x9bAADf70BD9369F54901CF3Ee1b3c63b60F4F0ED) — ABI: `build/contracts/FakeNefturians.json`
+- Fake Meebits (0xD1d148Be044AEB4948B48A03BeA2874871a26003) — ABI: `build/contracts/FakeMeebits.json`
+- Fake Meebits Claimer (0x5341e225Ab4D29B838a813E380c28b0eFD6FBa55) — ABI: `build/contracts/FakeMeebitsClaimer.json`
 
 ## Frontend UX (React)
 
-- App React (Vite) dans `frontend/` avec connexion Metamask (Sepolia uniquement) et routes :
-  - `/chain-info` (infos réseau + wallet, redirection si mauvaise chaîne)
+- App React (Vite) dans `frontend/` avec Metamask Sepolia et routes :
+  - `/chain-info` (infos reseau + wallet, redirection si mauvaise chaine)
   - `/fakeBayc` (nom, supply, bouton claim)
-  - `/fakeBayc/:tokenId` (affichage métadonnées + erreurs propres si token absent)
-  - `/fakeNefturians` (prix minimum, achat avec buffer)
-  - `/fakeNefturians/:userAddress` (liste des tokens détenus avec métadonnées)
-  - `/fakeMeebits` (claim via signatures fournies dans `frontend/public/claimer-signatures.json`)
-- Lancer l'app : `cd frontend && npm install && npm run dev` (ou `npm run build` pour un build statique).
-- Les ABI sont importées depuis `build/contracts` et les signatures du claimer sont pré-copiées dans `frontend/public/`.
+  - `/fakeBayc/:tokenId` (metadonnees + erreurs propres si token absent)
+  - `/fakeNefturians` (prix minimum, achat avec buffer > tokenPrice)
+  - `/fakeNefturians/:userAddress` (tokens detenus avec metadonnees)
+  - `/fakeMeebits` (claim via signatures locales `frontend/public/claimer-signatures.json`)
+- ABI copiees depuis `build/contracts`, signatures du claimer prechargees dans `frontend/public/`.
+
+### Guide rapide (fr)
+
+Prérequis : Node.js + npm, Metamask sur Sepolia.
+
+```bash
+cd frontend
+npm install
+npm run dev      # lancer en local (localhost:5173)
+npm run build    # build statique (dist/)
+```
+
 ## Tasks list
 
 ### Creating a js app and connecting to Ethereum
