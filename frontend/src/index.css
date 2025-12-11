@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;600&display=swap");
+
+:root {
+  --bg: #050916;
+  --bg-alt: #0c142f;
+  --card: #0f1d3a;
+  --border: #1f2b4a;
+  --accent: #6ef7c6;
+  --accent-strong: #54e8ff;
+  --text: #e8ecff;
+  --muted: #94a9d6;
+  --danger: #ff5c8d;
+  --warn: #f5b642;
+  --ok: #6fffb7;
+  --shadow: 0 10px 60px rgba(3, 8, 28, 0.5);
+  font-family: "Space Grotesk", "Fira Code", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--text);
+  background: radial-gradient(circle at 15% 20%, rgba(84, 232, 255, 0.12), transparent 30%),
+    radial-gradient(circle at 80% 0%, rgba(110, 247, 198, 0.14), transparent 35%),
+    linear-gradient(145deg, #060b1d, #050916 45%, #040711);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: transparent;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  color: #c9fff1;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
+}
